@@ -1,2 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import url(../node_modules/bootstrap/dist/css/bootstrap.min.css);
+@import url(../node_modules/font-awesome/css/font-awesome.min.css);
+@import url(../node_modules/ngx-toastr/toastr.css);
+@import url(./assets/CommonCSS/form.css);
+@import url(./assets/CommonCSS/tabs.css);
+@import url(../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css);
+
+
+

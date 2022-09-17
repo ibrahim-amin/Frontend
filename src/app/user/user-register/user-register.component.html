@@ -1,0 +1,65 @@
+<div class="row">
+<div class="col-6 m-auto">
+<div class="card m-auto">
+   <div class="card-header">
+      <h3>Register</h3>
+   </div>
+   <div class="card-body">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-group col-12">
+         <label for="name" class="form-label">Name</label>
+         <input type="text" class="form-control" formControlName="userName" [ngClass]="{'is-invalid':f['userName'].touched && !f['userName'].valid}">
+         <span *ngIf="f['userName'].touched && !f['userName'].valid || FormSubmitted " class="error-block" >
+            <span *ngIf="f['userName'].hasError('required')">Name is Required</span>
+         </span>
+      </div>
+
+      <div class="form-group col-12">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" formControlName="email" [ngClass]="{'is-invalid':f['email'].touched && !f['email'].valid}" >
+        <span *ngIf="f['email'].touched && !f['email'].valid || FormSubmitted" class="error-block" >
+          <span *ngIf="f['email'].hasError('required')">Email is Required</span>
+          <span *ngIf="f['email'].hasError('email')">Enter Valid Email</span>
+       </span>
+     </div>
+
+     <div class="form-group col-12">
+      <label for="password" class="form-label">Password</label>
+      <input type="text" class="form-control" formControlName="password" [ngClass]="{'is-invalid':f['password'].touched && !f['password'].valid}">
+      <span *ngIf="f['password'].touched && !f['password'].valid || FormSubmitted " class="error-block" >
+        <span *ngIf="f['password'].hasError('required')">password is Required</span>
+        <span *ngIf="f['password'].hasError('minlength')">Min length 8 Character</span>
+     </span>
+    </div>
+
+    <div class="form-group col-12">
+      <label for="confirmPassword" class="form-label">Confirm Password</label>
+      <input type="text" class="form-control" formControlName="confirmPassword">
+      <span *ngIf="f['confirmPassword'].touched && !f['confirmPassword'].valid || FormSubmitted" class="error-block" >
+        <span *ngIf="f['confirmPassword'].hasError('required')">Conpassword is Required</span>
+        <span *ngIf="f['confirmPassword'].hasError('mustMach')">Pasword Not matched</span>
+     </span>
+     </div>
+
+     <div class="form-group col-12">
+      <label for="mobile" class="form-label">Mobile</label>
+      <input type="text" class="form-control" formControlName="mobile">
+      <span *ngIf="f['mobile'].touched && !f['mobile'].valid || FormSubmitted" class="error-block" >
+        <span *ngIf="f['mobile'].hasError('required')">Mobile is Required</span>
+        <span *ngIf="f['mobile'].hasError('maxlength')">Max Length 10</span>
+     </span>
+      </div>
+
+      <div class="form-group col-12" >
+        <button class="btn btn-primary m-2" type="submit">Submit</button>
+        <button class="btn btn-primary" type="reset">Cancel</button>
+      </div>
+      <div>
+        <!-- register form: {{registerForm.value|json}} <br>
+        form status: {{registerForm.valid}} -->
+      </div>
+    </form>
+   </div>
+</div>
+</div>
+</div>
